@@ -1,34 +1,19 @@
-:root {
-  --main-text-color: #2e2f42;
-  --secondary-text-color: #434455;
-  --accent-color: #4d5ae5;
-  --hero-bg: #2e2f42;
-  --team-bg: #f4f4fd;
-  --footer-bg: #2e2f42;
-}
-
 /* =====================
-   RESET & BASE (MOBILE)
+   BASE / MOBILE FIRST
 ===================== */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-ul {
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
   margin: 0;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
+  font-family: "Roboto", sans-serif;
+  color: #434455;
+  background-color: #ffffff;
+  overflow-x: hidden;
 }
 
 img {
@@ -37,136 +22,93 @@ img {
   height: auto;
 }
 
-body {
-  font-family: "Roboto", sans-serif;
-  font-size: 16px;
-  line-height: 1.5;
-  color: var(--main-text-color);
-  background-color: #fff;
-  overflow-x: hidden;
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
 }
 
 /* =====================
-   HELPERS
+   CONTAINER
 ===================== */
+
 .container {
   max-width: 320px;
   padding: 0 16px;
   margin: 0 auto;
 }
 
-.section {
-  padding: 96px 0;
-}
-
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-}
-
 /* =====================
    HEADER (MOBILE)
 ===================== */
-.header {
-  border-bottom: 1px solid #e7e9fc;
-}
 
-.header-container {
-  display: flex;
-  align-items: center;
-  padding: 24px 0;
-}
-
-.logo {
-  font-family: "Raleway", sans-serif;
-  font-weight: 700;
-  font-size: 18px;
-  letter-spacing: 0.03em;
-}
-
-.logo-accent {
-  color: var(--accent-color);
-}
-
-/* mobilde gizli */
-nav,
-address {
+.nav,
+.address {
   display: none;
 }
 
 /* =====================
-   HERO (MOBILE)
+   HERO
 ===================== */
+
 .hero {
   max-width: 1440px;
   margin: 0 auto;
+  padding: 112px 0;
   background-image:
-    linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+    linear-gradient(rgba(46, 47, 66, 0.7),
+    rgba(46, 47, 66, 0.7)),
     url("../images/hero-mobile.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-}
-
-@media (min-resolution: 2dppx) {
-  .hero {
-    background-image:
-      linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
-      url("../images/hero-mobile@2x.jpg");
-  }
-}
-
-.hero-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  text-align: center;
 }
 
 .hero-title {
+  color: #ffffff;
   font-size: 36px;
   line-height: 1.11;
-  color: #fff;
-  text-align: center;
-  margin-bottom: 48px;
-}
-
-.hero-btn {
-  padding: 16px 32px;
-  background-color: var(--accent-color);
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
 }
 
 /* =====================
-   FEATURES (MOBILE)
+   FEATURES
 ===================== */
+
 .features-list {
   display: flex;
   flex-direction: column;
   gap: 72px;
 }
 
-/* mobil + tablet icon yok */
 .feature-icon {
   display: none;
 }
 
-/* =====================
-   TEAM (MOBILE)
-===================== */
-.team {
-  background-color: var(--team-bg);
+.feature-title {
+  font-size: 36px;
+  line-height: 1.11;
+  margin-bottom: 8px;
 }
 
-.section-title {
-  text-align: center;
-  font-size: 36px;
-  margin-bottom: 72px;
+.feature-text {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* =====================
+   TEAM
+===================== */
+
+.team {
+  background-color: #f4f4fd;
 }
 
 .team-list {
@@ -176,47 +118,58 @@ address {
 }
 
 .team-card {
-  background-color: #fff;
+  background-color: #ffffff;
+  border-radius: 0 0 4px 4px;
+  text-align: center;
 }
 
 .team-info {
   padding: 32px 0;
-  text-align: center;
+}
+
+.team-name {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.team-role {
+  font-size: 16px;
+  margin-bottom: 8px;
 }
 
 .team-socials {
   display: flex;
   justify-content: center;
-  gap: 12px;
-  margin-top: 8px;
-}
-
-.team-social-item {
-  width: 40px;
-  height: 40px;
+  gap: 24px;
 }
 
 .team-social-link {
-  width: 100%;
-  height: 100%;
-  background-color: var(--accent-color);
+  width: 40px;
+  height: 40px;
+  background-color: #4d5ae5;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.team-social-link svg {
-  fill: #fff;
-}
-
 /* =====================
-   PORTFOLIO (MOBILE)
+   PORTFOLIO
 ===================== */
+
 .portfolio-list {
   display: flex;
   flex-direction: column;
   gap: 48px;
+}
+
+.portfolio-thumb {
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio-overlay {
+  display: none;
 }
 
 .portfolio-info {
@@ -226,74 +179,31 @@ address {
 }
 
 /* =====================
-   FOOTER (MOBILE)
+   FOOTER
 ===================== */
+
 .footer {
-  background-color: var(--footer-bg);
+  background-color: #2e2f42;
   padding: 96px 0;
 }
 
-.footer-container {
+.footer-subscribe-form {
   display: flex;
-  flex-direction: column;
-  gap: 72px;
-}
-
-.footer-text {
-  color: #e7e9fc;
-  max-width: 264px;
-}
-
-.footer-subscribe-text {
-  color: #fff;
-  font-weight: 500;
-  margin-bottom: 16px;
-}
-
-/* mobilde alt alta */
-.subscribe-form {
-  display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   gap: 16px;
 }
 
-.subscribe-input,
-.subscribe-button {
+.footer-subscribe-input {
   width: 100%;
 }
 
-.subscribe-input {
-  height: 40px;
-  background: transparent;
-  border: 1px solid #fff;
-  border-radius: 4px;
-  padding-left: 16px;
-  color: #fff;
-}
-
 /* =====================
-   TABLET (768px)
+   TABLET
 ===================== */
+
 @media screen and (min-width: 768px) {
   .container {
     max-width: 768px;
-  }
-
-  nav,
-  address {
-    display: block;
-  }
-
-  .hero {
-    background-image:
-      linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
-      url("../images/hero-tablet.jpg");
-  }
-
-  .features-list {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 72px 24px;
   }
 
   .team-list {
@@ -309,61 +219,65 @@ address {
     gap: 72px 24px;
   }
 
-  .footer-container {
-    flex-direction: row;
-    align-items: baseline;
-    gap: 24px;
-  }
-
-  .subscribe-form {
-    flex-direction: row;
-  }
-
-  .subscribe-input {
-    width: 264px;
-  }
-
-  .subscribe-button {
-    width: auto;
+  .hero {
+    background-image:
+      linear-gradient(rgba(46, 47, 66, 0.7),
+      rgba(46, 47, 66, 0.7)),
+      url("../images/hero-tablet.jpg");
   }
 }
 
 /* =====================
-   DESKTOP (1158px)
+   DESKTOP
 ===================== */
+
 @media screen and (min-width: 1158px) {
   .container {
     max-width: 1158px;
     padding: 0 15px;
   }
 
-  .section {
-    padding: 120px 0;
-  }
-
-  .hero {
-    background-image:
-      linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
-      url("../images/hero-desktop.jpg");
-  }
-
-  /* sadece desktop icon */
-  .feature-icon {
+  .nav,
+  .address {
     display: flex;
-    height: 112px;
-    background-color: #f4f4fd;
-    border-radius: 4px;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 8px;
   }
 
-  .team-list {
-    flex-wrap: nowrap;
+  .features-list {
+    flex-direction: row;
     gap: 24px;
   }
 
-  .portfolio-card {
-    width: calc((100% - 48px) / 3);
+  .feature-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 264px;
+    height: 112px;
+    background-color: #f4f4fd;
+    border-radius: 4px;
+    margin-bottom: 8px;
+  }
+
+  .portfolio-overlay {
+    display: block;
+    position: absolute;
+    inset: 0;
+    background-color: rgba(77, 90, 229, 0.9);
+    color: #ffffff;
+    transform: translateY(100%);
+    transition: transform 250ms ease;
+    padding: 40px;
+  }
+
+  .portfolio-thumb:hover .portfolio-overlay {
+    transform: translateY(0);
+  }
+
+  .hero {
+    padding: 188px 0;
+    background-image:
+      linear-gradient(rgba(46, 47, 66, 0.7),
+      rgba(46, 47, 66, 0.7)),
+      url("../images/hero-desktop.jpg");
   }
 }
