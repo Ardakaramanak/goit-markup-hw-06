@@ -1,43 +1,54 @@
+/* ================= ROOT ================= */
 :root {
-  --main-text-color: #2e2f42;
+  --primary-text-color: #2e2f42;
   --secondary-text-color: #434455;
   --accent-color: #4d5ae5;
-  --team-bg: #f4f4fd;
-  --footer-bg: #2e2f42;
+  --accent-hover: #404bbf;
+  --light-bg: #f4f4fd;
+  --white: #ffffff;
 }
 
 /* ================= RESET ================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  color: var(--secondary-text-color);
+  background-color: var(--white);
+}
+
 h1,
 h2,
 h3,
-h4,
-h5,
-h6,
-p,
-ul {
+p {
   margin: 0;
 }
+
 ul {
-  list-style: none;
+  margin: 0;
   padding: 0;
+  list-style: none;
 }
+
 a {
   text-decoration: none;
   color: inherit;
 }
+
 img {
   display: block;
   max-width: 100%;
   height: auto;
 }
-body {
-  font-family: "Roboto", sans-serif;
-  color: var(--main-text-color);
-}
 
-/* ================= BASE / MOBILE ================= */
+/* ================= COMMON ================= */
 .container {
-  max-width: 320px;
+  width: 100%;
   padding: 0 16px;
   margin: 0 auto;
 }
@@ -46,66 +57,58 @@ body {
   padding: 96px 0;
 }
 
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
+.section-title {
+  font-size: 36px;
+  line-height: 1.11;
+  text-align: center;
+  margin-bottom: 72px;
+  color: var(--primary-text-color);
 }
 
-/* ================= HEADER (mobile) ================= */
+/* ================= HEADER ================= */
 .header {
   border-bottom: 1px solid #e7e9fc;
 }
+
 .header-container {
   display: flex;
   align-items: center;
-  padding: 24px 0;
-}
-.logo {
-  font-family: "Raleway", sans-serif;
-  font-weight: 700;
-}
-.logo-accent {
-  color: var(--accent-color);
+  justify-content: space-between;
 }
 
-/* mobilde gizli */
-nav,
-address {
+.nav,
+.address {
   display: none;
 }
 
 /* ================= HERO ================= */
 .hero {
+  background-color: var(--primary-text-color);
+  padding: 112px 0;
+  text-align: center;
   background-image:
     linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
     url("../images/hero-mobile.jpg");
   background-size: cover;
   background-position: center;
 }
-@media (min-resolution: 2dppx) {
-  .hero {
-    background-image:
-      linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
-      url("../images/hero-mobile@2x.jpg");
-  }
-}
-.hero-container {
-  text-align: center;
-}
+
 .hero-title {
   font-size: 36px;
-  color: #fff;
-  margin-bottom: 48px;
+  line-height: 1.11;
+  color: var(--white);
+  max-width: 320px;
+  margin: 0 auto 48px;
 }
-.hero-btn {
-  padding: 16px 32px;
-  background-color: var(--accent-color);
-  color: #fff;
+
+.hero-button {
+  min-width: 169px;
+  height: 56px;
   border: none;
   border-radius: 4px;
+  background-color: var(--accent-color);
+  color: var(--white);
+  cursor: pointer;
 }
 
 /* ================= FEATURES ================= */
@@ -114,35 +117,65 @@ address {
   flex-direction: column;
   gap: 72px;
 }
-.feature-icon {
-  display: none; /* mobil + tablet gizli */
+
+.features-icon {
+  display: none;
+}
+
+.features-title {
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 8px;
+  color: var(--primary-text-color);
+}
+
+.features-text {
+  text-align: center;
 }
 
 /* ================= TEAM ================= */
 .team {
-  background-color: var(--team-bg);
+  background-color: var(--light-bg);
 }
-.section-title {
-  text-align: center;
-  font-size: 36px;
-  margin-bottom: 72px;
-}
+
 .team-list {
   display: flex;
   flex-direction: column;
   gap: 72px;
 }
+
 .team-card {
-  background-color: #fff;
+  background-color: var(--white);
+  border-radius: 0 0 4px 4px;
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
+
 .team-info {
-  text-align: center;
   padding: 32px 0;
+  text-align: center;
 }
+
+.team-name {
+  font-size: 20px;
+  margin-bottom: 8px;
+  color: var(--primary-text-color);
+}
+
 .team-socials {
   display: flex;
   justify-content: center;
-  gap: 12px;
+  gap: 24px;
+  margin-top: 8px;
+}
+
+.team-social-link {
+  width: 40px;
+  height: 40px;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* ================= PORTFOLIO ================= */
@@ -151,48 +184,36 @@ address {
   flex-direction: column;
   gap: 48px;
 }
+
+.portfolio-card {
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08);
+}
+
 .portfolio-info {
   padding: 32px 16px;
-  border: 1px solid #e7e9fc;
-  border-top: none;
+}
+
+.portfolio-name {
+  font-size: 20px;
+  margin-bottom: 8px;
+  color: var(--primary-text-color);
 }
 
 /* ================= FOOTER ================= */
 .footer {
-  background-color: var(--footer-bg);
+  background-color: var(--primary-text-color);
   padding: 96px 0;
 }
+
 .footer-container {
   display: flex;
   flex-direction: column;
   gap: 72px;
-}
-.footer-text,
-.footer-subscribe-text,
-.footer-social-title {
-  color: #fff;
+  text-align: center;
 }
 
-.subscribe-form {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-.subscribe-input {
-  width: 100%;
-  height: 40px;
-  background: transparent;
-  border: 1px solid #fff;
-  padding-left: 16px;
-  color: #fff;
-}
-.subscribe-button {
-  align-self: flex-start;
-  padding: 8px 24px;
-  background-color: var(--accent-color);
-  color: #fff;
-  border: none;
-  border-radius: 4px;
+.footer-text {
+  color: var(--light-bg);
 }
 
 /* ================= TABLET ================= */
@@ -201,20 +222,10 @@ address {
     max-width: 768px;
   }
 
-  nav,
-  address {
-    display: block;
-  }
-
-  .nav-list {
-    display: flex;
-    gap: 40px;
-    margin-left: 76px;
-  }
-  .contacts-list {
-    display: flex;
-    gap: 40px;
-    margin-left: auto;
+  .hero {
+    background-image:
+      linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+      url("../images/hero-tablet.jpg");
   }
 
   .features-list {
@@ -226,8 +237,8 @@ address {
   .team-list {
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
     gap: 64px 24px;
+    justify-content: center;
   }
 
   .portfolio-list {
@@ -235,12 +246,11 @@ address {
     flex-wrap: wrap;
     gap: 72px 24px;
   }
-  .portfolio-card {
-    width: calc((100% - 24px) / 2);
-  }
 
-  .subscribe-form {
+  .footer-container {
     flex-direction: row;
+    flex-wrap: wrap;
+    text-align: left;
   }
 }
 
@@ -251,38 +261,42 @@ address {
     padding: 0 15px;
   }
 
-  .section {
-    padding: 120px 0;
+  .nav,
+  .address {
+    display: flex;
   }
 
   .hero {
+    padding: 188px 0;
     background-image:
       linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
       url("../images/hero-desktop.jpg");
   }
-  @media (min-resolution: 2dppx) {
-    .hero {
-      background-image:
-        linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
-        url("../images/hero-desktop@2x.jpg");
-    }
-  }
 
-  .feature-icon {
+  .features-icon {
     display: flex;
+    width: 264px;
     height: 112px;
-    background-color: #f4f4fd;
+    background-color: var(--light-bg);
     align-items: center;
     justify-content: center;
     margin-bottom: 8px;
   }
 
-  .team-list {
-    flex-wrap: nowrap;
-    gap: 24px;
+  .features-title,
+  .features-text {
+    text-align: left;
   }
 
-  .portfolio-card {
-    width: calc((100% - 48px) / 3);
+  .features-list {
+    flex-wrap: nowrap;
+  }
+
+  .team-list {
+    flex-wrap: nowrap;
+  }
+
+  .portfolio-list {
+    gap: 48px 24px;
   }
 }
