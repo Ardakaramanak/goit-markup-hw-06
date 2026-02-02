@@ -1,44 +1,59 @@
-:root {
-  --main-text-color: #2e2f42;
-  --secondary-text-color: #434455;
-  --accent-color: #4d5ae5;
-  --team-bg: #f4f4fd;
-  --footer-bg: #2e2f42;
+/* =====================
+   RESET & BASE
+===================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-/* ================= RESET ================= */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-ul {
+body {
   margin: 0;
+  font-family: "Roboto", sans-serif;
+  color: #434455;
+  background-color: #ffffff;
+  overflow-x: hidden;
 }
-ul {
-  list-style: none;
-  padding: 0;
-}
-a {
-  text-decoration: none;
-  color: inherit;
-}
+
 img {
   display: block;
   max-width: 100%;
   height: auto;
 }
 
-body {
-  font-family: "Roboto", sans-serif;
-  color: var(--main-text-color);
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-/* ================= COMMON ================= */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* =====================
+   LAYOUT
+===================== */
 .container {
-  max-width: 320px;
+  max-width: 428px;
   padding: 0 16px;
   margin: 0 auto;
 }
@@ -47,14 +62,15 @@ body {
   padding: 96px 0;
 }
 
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
+.section-title {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 72px;
 }
 
-/* ================= HEADER ================= */
+/* =====================
+   HEADER (MOBILE)
+===================== */
 .header {
   border-bottom: 1px solid #e7e9fc;
 }
@@ -63,79 +79,81 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 24px 0;
+  height: 70px;
 }
 
 .logo {
   font-family: "Raleway", sans-serif;
   font-weight: 700;
+  font-size: 18px;
+  letter-spacing: 0.03em;
 }
 
 .logo-accent {
-  color: var(--accent-color);
+  color: #4d5ae5;
 }
 
-/* MOBİL: NAV + ADDRESS YOK */
-nav,
-address {
+.nav,
+.contacts {
   display: none;
 }
 
-/* ================= HERO ================= */
+/* =====================
+   HERO
+===================== */
 .hero {
+  background-color: #2e2f42;
   background-image:
     linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
     url("../images/hero-mobile.jpg");
   background-size: cover;
   background-position: center;
-  padding: 112px 0;
   text-align: center;
-}
-
-@media (min-resolution: 2dppx) {
-  .hero {
-    background-image:
-      linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
-      url("../images/hero-mobile@2x.jpg");
-  }
+  padding: 112px 0;
 }
 
 .hero-title {
-  color: #fff;
+  color: #ffffff;
   font-size: 36px;
-  max-width: 288px;
+  max-width: 320px;
   margin: 0 auto 48px;
 }
 
 .hero-btn {
+  background-color: #4d5ae5;
+  color: #ffffff;
   padding: 16px 32px;
-  background: var(--accent-color);
-  color: #fff;
-  border: none;
   border-radius: 4px;
 }
 
-/* ================= FEATURES ================= */
+/* =====================
+   FEATURES (MOBILE)
+===================== */
 .features-list {
   display: flex;
   flex-direction: column;
   gap: 72px;
 }
 
-/* MOBİL + TABLET: ICON YOK */
 .feature-icon {
   display: none;
 }
 
-/* ================= TEAM ================= */
-.team {
-  background: var(--team-bg);
-}
-
-.section-title {
+.feature-title {
   text-align: center;
   font-size: 36px;
-  margin-bottom: 72px;
+  margin-bottom: 8px;
+}
+
+.feature-text {
+  text-align: center;
+}
+
+/* =====================
+   TEAM
+===================== */
+.team {
+  background-color: #f4f4fd;
 }
 
 .team-list {
@@ -145,8 +163,10 @@ address {
 }
 
 .team-card {
-  background: #fff;
+  background-color: #ffffff;
+  border-radius: 4px;
   text-align: center;
+  overflow: hidden;
 }
 
 .team-info {
@@ -156,25 +176,23 @@ address {
 .team-socials {
   display: flex;
   justify-content: center;
-  gap: 12px;
+  gap: 24px;
   margin-top: 8px;
 }
 
 .team-social-link {
+  display: flex;
   width: 40px;
   height: 40px;
-  background: var(--accent-color);
+  background-color: #4d5ae5;
   border-radius: 50%;
-  display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.team-social-link svg {
-  fill: #fff;
-}
-
-/* ================= PORTFOLIO ================= */
+/* =====================
+   PORTFOLIO
+===================== */
 .portfolio-list {
   display: flex;
   flex-direction: column;
@@ -185,62 +203,57 @@ address {
   border: 1px solid #e7e9fc;
 }
 
-.portfolio-thumb {
-  position: relative;
-  overflow: hidden;
-}
-
-.portfolio-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(77, 90, 229, 0.9);
-  transform: translateY(100%);
-  transition: transform 250ms;
-}
-
-.portfolio-card:hover .portfolio-overlay {
-  transform: translateY(0);
-}
-
 .portfolio-info {
   padding: 32px 16px;
 }
 
-/* ================= FOOTER ================= */
+/* =====================
+   FOOTER (MOBILE)
+===================== */
 .footer {
-  background: var(--footer-bg);
+  background-color: #2e2f42;
   padding: 96px 0;
+  color: #ffffff;
 }
 
 .footer-container {
   display: flex;
   flex-direction: column;
   gap: 72px;
+  align-items: center;
 }
 
 .footer-text {
-  color: #e7e9fc;
-  max-width: 264px;
+  max-width: 268px;
+  text-align: center;
 }
 
-.footer-subscribe-text {
-  color: #fff;
-  margin-bottom: 16px;
+.social-list {
+  display: flex;
+  gap: 16px;
+}
+
+.social-link {
+  width: 40px;
+  height: 40px;
+  background-color: #4d5ae5;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .subscribe-form {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  width: 100%;
 }
 
 .subscribe-input {
   width: 100%;
   height: 40px;
-  background: transparent;
-  border: 1px solid #fff;
-  color: #fff;
-  padding-left: 16px;
+  padding: 8px 16px;
 }
 
 .subscribe-button {
@@ -248,27 +261,26 @@ address {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 8px 24px;
-  background: var(--accent-color);
-  color: #fff;
-  border: none;
+  background-color: #4d5ae5;
+  color: #ffffff;
+  height: 40px;
 }
 
-/* ================= TABLET ================= */
+/* =====================
+   TABLET ≥768px
+===================== */
 @media screen and (min-width: 768px) {
   .container {
     max-width: 768px;
   }
 
-  nav,
-  address {
+  .nav {
     display: block;
   }
 
-  .hero {
-    background-image:
-      linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
-      url("../images/hero-tablet.jpg");
+  .nav-list {
+    display: flex;
+    gap: 40px;
   }
 
   .features-list {
@@ -277,10 +289,13 @@ address {
     gap: 72px 24px;
   }
 
+  .feature-item {
+    width: calc((100% - 24px) / 2);
+  }
+
   .team-list {
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
     gap: 64px 24px;
   }
 
@@ -294,50 +309,64 @@ address {
     width: calc((100% - 24px) / 2);
   }
 
+  .footer-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 72px 24px;
+  }
+
   .subscribe-form {
     flex-direction: row;
   }
+
+  .subscribe-input {
+    width: 264px;
+  }
 }
 
-/* ================= DESKTOP ================= */
+/* =====================
+   DESKTOP ≥1158px
+===================== */
 @media screen and (min-width: 1158px) {
   .container {
     max-width: 1158px;
-    padding: 0 15px;
   }
 
-  .section {
-    padding: 120px 0;
+  .contacts {
+    display: block;
   }
 
-  .hero {
-    background-image:
-      linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
-      url("../images/hero-desktop.jpg");
-    padding: 188px 0;
+  .contacts-list {
+    display: flex;
+    gap: 40px;
   }
 
-  /* SADECE DESKTOP: FEATURES ICON */
   .feature-icon {
     display: flex;
     height: 112px;
-    background: #f4f4fd;
-    align-items: center;
+    background-color: #f4f4fd;
     justify-content: center;
+    align-items: center;
     margin-bottom: 8px;
   }
 
-  .team-list {
-    flex-wrap: nowrap;
+  .feature-title {
+    font-size: 20px;
+    text-align: left;
+  }
+
+  .feature-text {
+    text-align: left;
   }
 
   .portfolio-card {
     width: calc((100% - 48px) / 3);
   }
 
-  .footer-container {
-    flex-direction: row;
-    align-items: baseline;
-    gap: 120px;
+  .hero {
+    background-image:
+      linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+      url("../images/hero-desktop.jpg");
   }
 }
