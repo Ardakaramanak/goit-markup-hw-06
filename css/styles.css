@@ -298,14 +298,19 @@ address {
   max-width: 264px;
 }
 .feature-icon {
-  width: 100%;
-  height: 112px;
-  background-color: #f4f4fd;
-  border-radius: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 8px;
+  display: none;
+}
+@media screen and (min-width: 1158px) {
+  .feature-icon {
+    width: 100%;
+    height: 112px;
+    background-color: #f4f4fd;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+  }
 }
 .feature-icon svg {
   fill: var(--main-text-color);
@@ -604,12 +609,15 @@ address {
   font-weight: 500;
   margin-bottom: 16px;
 }
+/* MOBILE */
 .subscribe-form {
   display: flex;
-  gap: 24px;
+  flex-direction: column;
+  gap: 16px;
 }
+
 .subscribe-input {
-  width: 264px;
+  width: 100%;
   height: 40px;
   background-color: transparent;
   border: 1px solid #ffffff;
@@ -617,6 +625,25 @@ address {
   padding-left: 16px;
   color: #ffffff;
 }
+
+.subscribe-btn {
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .subscribe-form {
+    flex-direction: row;
+    gap: 24px;
+  }
+
+  .subscribe-input {
+    width: 264px;
+  }
+
+  .subscribe-btn {
+    width: auto;
+  }
+}
+
 .subscribe-input::placeholder {
   color: #ffffff;
 }
