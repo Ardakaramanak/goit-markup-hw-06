@@ -387,6 +387,12 @@ address {
 .footer-info {
   margin-right: 120px;
 }
+@media screen and (max-width: 1157px) {
+  .footer-info {
+    margin-right: 0;
+  }
+}
+
 .footer-logo-white {
   color: #ffffff;
 }
