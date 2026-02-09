@@ -155,13 +155,13 @@ address {
 @media screen and (min-width: 1158px) {
   .contacts-list {
     display: flex;
-    flex-direction: row; 
-    gap: 40px;           
+    flex-direction: row;
+    gap: 40px;
     margin-left: auto;
   }
 
   .contact-link {
-    font-size: 16px; 
+    font-size: 16px;
     line-height: 1.5;
   }
 }
@@ -844,22 +844,30 @@ address {
     margin-left: auto;
   }
 }
-/* Tablet ve Masaüstü için (768px ve üzeri) */
+/* Tablet ve Masaüstü Genel Ayarları (768px+) */
 @media screen and (min-width: 768px) {
   nav {
     display: block;
-    margin-right: auto;
     margin-left: 76px;
   }
 
   address {
     display: block;
     margin-left: auto;
+    font-style: normal;
   }
 
   .contacts-list {
     display: flex;
     flex-direction: column;
     gap: 12px;
+  }
+}
+
+/* SADECE MASAÜSTÜ İÇİN (1158px+) */
+@media screen and (min-width: 1158px) {
+  .contacts-list {
+    flex-direction: row;
+    gap: 40px;
   }
 }
