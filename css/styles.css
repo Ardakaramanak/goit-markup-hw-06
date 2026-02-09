@@ -1,11 +1,13 @@
-:root {
+:root 
+{
   --main-text-color: #2e2f42;
   --secondary-text-color: #434455;
   --accent-color: #4d5ae5;
   --hero-bg: #2e2f42;
   --team-bg: #f4f4fd;
   --footer-bg: #2e2f42;
-} /* RESET */
+} 
+/* RESET */
 h1,
 h2,
 h3,
@@ -35,7 +37,8 @@ body {
   line-height: 1.5;
   color: var(--main-text-color);
   background-color: #fff;
-} /* HELPERS */
+} 
+/* HELPERS */
 .container {
   max-width: 320px;
   padding-left: 16px;
@@ -138,8 +141,7 @@ address {
     flex-direction: column;
     gap: 12px;
   }
-}
-
+} 
 /* HERO */
 .hero {
   max-width: 1440px;
@@ -205,7 +207,8 @@ address {
   display: flex;
   flex-direction: column;
   align-items: center;
-} /* FEATURES */
+}
+ /* FEATURES */
 .features-list {
   display: flex;
   flex-direction: column;
@@ -218,26 +221,23 @@ address {
     gap: 72px 24px;
   }
 }
-/* MOBIL (varsayılan) */
+ /* MOBIL (varsayılan) */
 .feature-item {
   width: 100%;
-}
-
+} 
 /* TABLET */
 @media screen and (min-width: 768px) {
   .feature-item {
     width: calc((100% - 24px) / 2);
   }
 }
-
-/* DESKTOP */
+ /* DESKTOP */
 @media screen and (min-width: 1158px) {
   .feature-item {
     width: calc((100% - 72px) / 4);
   }
 }
-
-/* TEAM */
+ /* TEAM */
 .team {
   background-color: var(--team-bg);
 }
@@ -274,7 +274,8 @@ address {
 }
 .team-name {
   margin-bottom: 8px;
-} /* PORTFOLIO */
+}
+ /* PORTFOLIO */
 .portfolio-list {
   display: flex;
   flex-direction: column;
@@ -286,26 +287,23 @@ address {
     flex-wrap: wrap;
     gap: 72px 24px;
   }
-}
+} 
 /* MOBIL */
 .portfolio-card {
   width: 100%;
-}
-
+} 
 /* TABLET */
 @media screen and (min-width: 768px) {
   .portfolio-card {
     width: calc((100% - 24px) / 2);
   }
 }
-
-/* DESKTOP */
+ /* DESKTOP */
 @media screen and (min-width: 1158px) {
   .portfolio-card {
     width: calc((100% - 48px) / 3);
   }
 }
-
 .portfolio-info {
   padding: 32px 16px;
   border: 1px solid #e7e9fc;
@@ -313,7 +311,8 @@ address {
 }
 .portfolio-name {
   margin-bottom: 8px;
-} /* FOOTER */
+}
+ /* FOOTER */
 .footer {
   background-color: var(--footer-bg);
   padding: 100px 0;
@@ -642,8 +641,7 @@ address {
   color: #ffffff;
   font-weight: 500;
   margin-bottom: 16px;
-}
-/* MOBILE */
+} /* MOBILE */
 .subscribe-form {
   display: flex;
   flex-direction: column;
@@ -804,25 +802,20 @@ address {
   .menu-toggle {
     display: none;
   }
-}
-/* MOBIL */
+} /* MOBIL */
 .footer-container {
   align-items: center;
   text-align: center;
-}
-
-/* TABLET */
+} /* TABLET */
 @media screen and (min-width: 768px) {
   .footer-container {
     align-items: baseline;
   }
-
+  
   .footer-subscribe {
     margin-left: 0;
   }
-}
-
-/* DESKTOP */
+} /* DESKTOP */
 @media screen and (min-width: 1158px) {
   .footer-subscribe {
     margin-left: auto;
