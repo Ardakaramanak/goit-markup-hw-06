@@ -78,8 +78,10 @@ body {
 .header-container {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding: 24px 0;
 }
+
 .logo {
   font-family: "Raleway", sans-serif;
   font-weight: 700;
@@ -93,6 +95,7 @@ body {
   display: flex;
   gap: 40px;
   margin-left: 76px;
+  margin-right: auto;
 }
 .nav-link {
   font-weight: 500;
@@ -138,8 +141,9 @@ address {
 }
 @media screen and (min-width: 768px) and (max-width: 1157px) {
   .contacts-list {
+    display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 16px;
   }
 }
 /* HERO */
@@ -819,5 +823,24 @@ address {
 @media screen and (min-width: 1158px) {
   .footer-subscribe {
     margin-left: auto;
+  }
+}
+/* Tablet ve Masaüstü için (768px ve üzeri) */
+@media screen and (min-width: 768px) {
+  nav {
+    display: block;
+    margin-right: auto;
+    margin-left: 76px;
+  }
+
+  address {
+    display: block;
+    margin-left: auto;
+  }
+
+  .contacts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
   }
 }
