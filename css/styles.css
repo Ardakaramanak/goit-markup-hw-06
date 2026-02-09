@@ -97,7 +97,6 @@ body {
   font-weight: 700;
   font-size: 18px;
   letter-spacing: 0.03em;
-
 }
 
 .logo-accent {
@@ -162,7 +161,6 @@ address {
   .contact-link {
     font-size: 12px;
     line-height: 1.17;
-
   }
 }
 
@@ -425,7 +423,7 @@ address {
   .footer-container {
     display: flex;
     flex-wrap: wrap;
- 
+
     align-items: baseline;
 
     gap: 72px 24px;
@@ -467,7 +465,6 @@ address {
     margin-left: auto;
   }
 }
-
 
 .footer-logo-white {
   color: #ffffff;
@@ -643,9 +640,7 @@ address {
   color: #fff;
   border: none;
   border-radius: 4px;
-
 }
-
 
 .backdrop {
   position: fixed;
@@ -882,16 +877,19 @@ address {
   .menu-toggle {
     display: none;
   }
-} /* MOBIL */
-.footer-container {
-  align-items: center;
-  text-align: center;
-} /* TABLET */
+}
+
+/* TABLET */
 @media screen and (min-width: 768px) {
   .footer-container {
+    display: flex;
+    flex-direction: row; /* Hocanın dediği satır */
+    flex-wrap: wrap;     /* Subscribe'ın alta düşmesi için şart */
     align-items: baseline;
+    gap: 72px 24px;
+    padding-left: 108px;
   }
-
+}
   .footer-subscribe {
     margin-left: 0;
   }
