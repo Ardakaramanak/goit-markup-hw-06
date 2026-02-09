@@ -1,12 +1,11 @@
-:root 
-{
+:root {
   --main-text-color: #2e2f42;
   --secondary-text-color: #434455;
   --accent-color: #4d5ae5;
   --hero-bg: #2e2f42;
   --team-bg: #f4f4fd;
   --footer-bg: #2e2f42;
-} 
+}
 /* RESET */
 h1,
 h2,
@@ -37,7 +36,7 @@ body {
   line-height: 1.5;
   color: var(--main-text-color);
   background-color: #fff;
-} 
+}
 /* HELPERS */
 .container {
   max-width: 320px;
@@ -71,7 +70,8 @@ body {
   height: 1px;
   overflow: hidden;
   clip: rect(0 0 0 0);
-} /* HEADER */
+}
+/* HEADER */
 .header {
   border-bottom: 1px solid #e7e9fc;
 }
@@ -141,7 +141,7 @@ address {
     flex-direction: column;
     gap: 12px;
   }
-} 
+}
 /* HERO */
 .hero {
   max-width: 1440px;
@@ -208,7 +208,7 @@ address {
   flex-direction: column;
   align-items: center;
 }
- /* FEATURES */
+/* FEATURES */
 .features-list {
   display: flex;
   flex-direction: column;
@@ -221,23 +221,23 @@ address {
     gap: 72px 24px;
   }
 }
- /* MOBIL (varsayılan) */
+/* MOBIL (varsayılan) */
 .feature-item {
   width: 100%;
-} 
+}
 /* TABLET */
 @media screen and (min-width: 768px) {
   .feature-item {
     width: calc((100% - 24px) / 2);
   }
 }
- /* DESKTOP */
+/* DESKTOP */
 @media screen and (min-width: 1158px) {
   .feature-item {
     width: calc((100% - 72px) / 4);
   }
 }
- /* TEAM */
+/* TEAM */
 .team {
   background-color: var(--team-bg);
 }
@@ -275,7 +275,7 @@ address {
 .team-name {
   margin-bottom: 8px;
 }
- /* PORTFOLIO */
+/* PORTFOLIO */
 .portfolio-list {
   display: flex;
   flex-direction: column;
@@ -287,18 +287,18 @@ address {
     flex-wrap: wrap;
     gap: 72px 24px;
   }
-} 
+}
 /* MOBIL */
 .portfolio-card {
   width: 100%;
-} 
+}
 /* TABLET */
 @media screen and (min-width: 768px) {
   .portfolio-card {
     width: calc((100% - 24px) / 2);
   }
 }
- /* DESKTOP */
+/* DESKTOP */
 @media screen and (min-width: 1158px) {
   .portfolio-card {
     width: calc((100% - 48px) / 3);
@@ -312,7 +312,7 @@ address {
 .portfolio-name {
   margin-bottom: 8px;
 }
- /* FOOTER */
+/* FOOTER */
 .footer {
   background-color: var(--footer-bg);
   padding: 100px 0;
@@ -811,7 +811,7 @@ address {
   .footer-container {
     align-items: baseline;
   }
-  
+
   .footer-subscribe {
     margin-left: 0;
   }
