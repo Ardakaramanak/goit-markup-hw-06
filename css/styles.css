@@ -143,7 +143,26 @@ address {
   .contacts-list {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 12px;
+    margin-left: auto;
+  }
+
+  .contact-link {
+    font-size: 12px;
+    line-height: 1.17;
+  }
+}
+@media screen and (min-width: 1158px) {
+  .contacts-list {
+    display: flex;
+    flex-direction: row; 
+    gap: 40px;           
+    margin-left: auto;
+  }
+
+  .contact-link {
+    font-size: 16px; 
+    line-height: 1.5;
   }
 }
 /* HERO */
